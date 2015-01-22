@@ -31,6 +31,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'vim-scripts/The-NERD-tree'
 
 
 " All of your Plugins must be added before the following line
@@ -96,3 +97,5 @@ set softtabstop=8	" Set columns a tab counts when hit
 set noexpandtab		" No replace tab with space
 
 highlight SpecialKey guifg=LightRed
+
+nnoremap <silent> <F5> :NERDTreeToggle<CR>
