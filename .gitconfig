@@ -1,0 +1,16 @@
+[user]
+	email = rampant1018@gmail.com
+	name = Jeff Liaw
+[color]
+	ui = true
+[core]
+	editor = vim
+	whitespace = trailing-space,space-before-tab
+[merge]
+	tool = vimdiff
+[alias]
+	st = status
+	br = branch
+	unstage = reset HEAD --
+[push]
+	default = matching
