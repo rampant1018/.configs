@@ -31,12 +31,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" A tree explore plugin for navigating the filesystem
-Plugin 'vim-scripts/The-NERD-tree'
-
-" Basic cscope settings and key mappings
-Plugin 'cscope_macros.vim'
-
+Plugin 'vim-scripts/The-NERD-tree' " File explorer
+Plugin 'cscope_macros.vim' " Basic cscope settings and key mappings
+Plugin 'taglist.vim' " Source code browser
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -104,6 +101,10 @@ set tabstop=8		" Set columns a tab counts when display
 set softtabstop=8	" Set columns a tab counts when hit
 set noexpandtab		" No replace tab with space
 
+" Taglist settings
+let Tlist_Use_Right_Window = 1	" Open Taglist on right side
+
 highlight SpecialKey guifg=LightRed
 
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
+nnoremap <silent> <F6> :TlistToggle<CR>
