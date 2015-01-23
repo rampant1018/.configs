@@ -73,6 +73,13 @@ filetype on		" Enable filetype detection
 filetype indent on	" Enable filetype-specific indenting
 filetype plugin on	" Enable filetype-specific plugins
 
+" Generic settings
+set bs=2		" Allow backspaceing over everything in insert mode
+set autoread		" Read when file is changed from outside automatically
+set autowrite		" Automatically save before commands like :next and :make
+set mouse=a		" Enable mouse usage (all modes)
+set list listchars=tab:\ \ ,trail:·
+
 " Visual support settings
 set showcmd		" Show (partial) command in status line.
 set showmatch		" Show matching brackets.
@@ -102,13 +109,6 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 
-set bs=2		" Allow backspaceing over everything in insert mode
-set autoread		" Read when file is changed from outside automatically
-set autowrite		" Automatically save before commands like :next and :make
-set mouse=a		" Enable mouse usage (all modes)
-
-set list listchars=tab:\ \ ,trail:·
-
 " Indent settings
 set shiftwidth=8	" Intent columns with the reindent operations(<< and >>)
 set tabstop=8		" Set columns a tab counts when display
@@ -118,7 +118,28 @@ set noexpandtab		" No replace tab with space
 " Taglist settings
 let Tlist_Use_Right_Window = 1	" Open Taglist on right side
 
-highlight SpecialKey guifg=LightRed
+" Color settings
+hi cursorline guibg=#333333 
+hi CursorColumn guibg=#333333
+hi Comment      term=bold ctermfg=darkcyan
+hi Constant     term=underline ctermfg=Red
+hi Special      term=bold ctermfg=Magenta
+hi Identifier   term=underline ctermfg=cyan
+hi Statement    term=bold ctermfg=Brown
+hi PreProc      term=bold ctermfg=DarkYellow
+hi Type         term=bold ctermfg=DarkGreen
+hi Ignore       ctermfg=white
+hi Error        term=reverse ctermbg=Red ctermfg=White
+hi Todo         term=standout ctermbg=Yellow ctermfg=Red
+hi Search       term=standout ctermbg=Yellow ctermfg=Black
+hi ErrorMsg     term=reverse ctermbg=Red ctermfg=White
+hi StatusLine   ctermfg=darkblue  ctermbg=gray
+hi StatusLineNC ctermfg=brown   ctermbg=darkblue
+hi SpecialKey	guifg=LightRed
+autocmd InsertLeave * hi clear
+autocmd InsertEnter * hi cursorline term=none cterm=none ctermbg=DarkBlue
+set background=dark
 
+" Key mapping
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
 nnoremap <silent> <F6> :TlistToggle<CR>
