@@ -88,6 +88,20 @@ set ignorecase		" Do case insensitive matching
 set smartcase		" Do smart case matching
 set incsearch		" Incremental search
 
+" Backup settings
+if !filereadable('~/.vim/backup')
+	silent !mkdir -p ~/.vim/backup
+endif
+if !filereadable('~/.vim/swap')
+	silent !mkdir -p ~/.vim/swap
+endif
+if !filereadable('~/.vim/undo')
+	silent !mkdir -p ~/.vim/undo
+endif
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
+
 set bs=2		" Allow backspaceing over everything in insert mode
 set autoread		" Read when file is changed from outside automatically
 set autowrite		" Automatically save before commands like :next and :make
