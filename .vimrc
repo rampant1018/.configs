@@ -31,7 +31,11 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" A tree explore plugin for navigating the filesystem
 Plugin 'vim-scripts/The-NERD-tree'
+
+" Basic cscope settings and key mappings
+Plugin 'cscope_macros.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -55,6 +59,8 @@ filetype plugin indent on    " required
 if iCanHazVundle == 0
 	echo "Installing Plugins, please ignore key map error messages"
 	echo ""
+	:PluginInstall
+	:qall
 endif
 
 "------------------------------------------------------------------------------
@@ -76,7 +82,9 @@ set showmatch		" Show matching brackets.
 set number		" Show line number
 set ruler		" Show the cursor position all the time
 set cursorline		" Show the current line ruler
-set colorcolumn=80	" Show a red line at column 80
+if exists('+colorcolumn')
+	set colorcolumn=80 " Show a red line at column 80
+endif
 
 " Seatch settings
 set ignorecase		" Do case insensitive matching
