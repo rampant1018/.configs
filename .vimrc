@@ -34,6 +34,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-scripts/The-NERD-tree' " File explorer
 Plugin 'cscope_macros.vim' " Basic cscope settings and key mappings
 Plugin 'taglist.vim' " Source code browser
+Plugin 'milkypostman/vim-togglelist' " Quickfix & Location list toggles
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -140,6 +141,21 @@ autocmd InsertLeave * hi clear
 autocmd InsertEnter * hi cursorline term=none cterm=none ctermbg=DarkBlue
 set background=dark
 
-" Key mapping
-nnoremap <silent> <F5> :NERDTreeToggle<CR>
-nnoremap <silent> <F6> :TlistToggle<CR>
+"------------------------------------------------------------------------------
+" Key Mappings 
+"------------------------------------------------------------------------------
+nnoremap <silent> <F5>	:NERDTreeToggle<CR>
+nnoremap <silent> <F6>	:TlistToggle<CR>
+nnoremap <silent> <F9>	:make<CR><CR> \| :echo "Make done"<CR>
+" Quickfix key settings
+"       | ø      | SHIFT   | CTRL
+" ------+--------+---------+---------
+" <F11> | :cprev | :cpfile | :colder
+" <F12> | :cnext | :cnfile | :cnewer
+nnoremap <silent> <F10>		:cprev<CR>
+nnoremap <silent> <F12>		:cnext<CR>
+nnoremap <silent> <S-F10>	:cpfile<CR>
+nnoremap <silent> <S-F12>	:cnfile<CR>
+nnoremap <silent> <C-F10>	:colder<CR>
+nnoremap <silent> <C-F12>	:cnewer<CR>
+
