@@ -143,19 +143,27 @@ set background=dark
 
 "------------------------------------------------------------------------------
 " Key Mappings 
+"
+" Generic key mappings
+"       | ø
+" ------+----------------------------
+" <F5>  | Toggle NERD Tree
+" <F6>  | Toggle Tag List
+" <F8>  | Make program
+"
+" Qucikfix key mappings 
+"       | ø      | SHIFT   | CTRL
+" ------+--------+---------+---------
+" <F9>  | :cprev | :cpfile | :colder
+" <F10> | :cnext | :cnfile | :cnewer
 "------------------------------------------------------------------------------
 nnoremap <silent> <F5>	:NERDTreeToggle<CR>
 nnoremap <silent> <F6>	:TlistToggle<CR>
-nnoremap <silent> <F9>	:make<CR><CR> \| :echo "Make done"<CR>
-" Quickfix key settings
-"       | ø      | SHIFT   | CTRL
-" ------+--------+---------+---------
-" <F11> | :cprev | :cpfile | :colder
-" <F12> | :cnext | :cnfile | :cnewer
-nnoremap <silent> <F10>		:cprev<CR>
-nnoremap <silent> <F12>		:cnext<CR>
-nnoremap <silent> <S-F10>	:cpfile<CR>
-nnoremap <silent> <S-F12>	:cnfile<CR>
-nnoremap <silent> <C-F10>	:colder<CR>
-nnoremap <silent> <C-F12>	:cnewer<CR>
+nnoremap <silent> <F8>	:make<CR><CR> \| :echo "Make done"<CR>
+nnoremap <silent> <F9>		:cprev<CR>
+nnoremap <silent> <F10>		:cnext<CR>
+nnoremap <silent> <S-F9>	:cpfile<CR>
+nnoremap <silent> <S-F10>	:cnfile<CR>
+nnoremap <silent> <C-F9>	:colder<CR>
+nnoremap <silent> <C-F10>	:cnewer<CR>
 
