@@ -137,7 +137,7 @@ hi ErrorMsg     term=reverse ctermbg=Red ctermfg=White
 hi StatusLine   ctermfg=darkblue  ctermbg=gray
 hi StatusLineNC ctermfg=brown   ctermbg=darkblue
 hi SpecialKey	guifg=LightRed
-autocmd InsertLeave * hi clear
+autocmd InsertLeave * hi cursorline term=none cterm=underline ctermbg=none
 autocmd InsertEnter * hi cursorline term=none cterm=none ctermbg=DarkBlue
 set background=dark
 
