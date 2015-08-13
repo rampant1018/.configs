@@ -142,7 +142,7 @@ autocmd InsertEnter * hi cursorline term=none cterm=none ctermbg=DarkBlue
 set background=dark
 
 " Tab bar color settings
-hi TabLineFill  ctermfg=LightGreen ctermbg=DarkGreen
+hi TabLineFill  ctermfg=Yellow ctermbg=Yellow
 hi TabLine      ctermfg=Black ctermbg=Yellow
 hi TabLineSel   cterm=standout ctermfg=Red ctermbg=Black
 
